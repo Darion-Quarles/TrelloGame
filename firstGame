@@ -1,8 +1,9 @@
 This should work
 
 ------minigames ideas------
-    -pinball
-    -flappy bird
-    -snake
-    -idle clicker
-    -Rock, Paper, Scissors (lizard, spock)
+    -pinball --very hard, how do we make everything?
+    -flappy bird --below difficult, how do we get things to move and spawn?
+    -snake --difficult how do we get things to move and spawn and grow?
+    
+    -idle clicker --very simple, may need an end goal
+    -Rock, Paper, Scissors (lizard, spock) --easy to make, should work easily
