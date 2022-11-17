@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    <title>RPS</title>
+    <script type="text/javascript">
+        var g = 0;
+        var opponent = 0;
+
+        function rnumber(){
+            opponent = Math.floor((Math.random() * 3) + 1);
+            console.log("opponent:" + opponent);
+        }
+
+        function iClick() {
+            g = 1;
+            console.log(g);
+            rnumber();
+            
+            if (opponent == g){
+                console.log("tie");
+            }else if(opponent == 2){
+                console.log("win");
+            }else{
+                console.log("lose");
+            }
+        }
+        function bClick() {
+            g = 2;
+            console.log(g);
+            rnumber();
+
+            if (opponent == g){
+                console.log("tie");
+            }else if(opponent == 3){
+                console.log("win");
+            }else{
+                console.log("lose");
+            }
+        }
+        function sClick() {
+            g = 3;
+            console.log(g);
+            rnumber();
+
+            if (opponent == g){
+                console.log("tie");
+            }else if(opponent == 1){
+                console.log("win");
+            }else{
+                console.log("lose");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="iClick()">Integer</button>
+    <button onclick="bClick()">Boolean</button>
+    <button onclick="sClick()">String</button>
+</body>
