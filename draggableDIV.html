@@ -23,8 +23,8 @@ position: absolute;
 
 <p>Click and hold the mouse button down while moving the DIV element</p>
 
-<div id="mydiv">
-    <div id="mydivheader">Click here to move</div>
+<div id="draggable">
+    <div id="draggableheader">Click here to move</div>
     <p>Move</p>
     <p>this</p>
     <p>DIV</p>
@@ -32,7 +32,7 @@ position: absolute;
 
 <script>
 //Make the DIV element draggagle:
-dragElement(document.getElementById("mydiv"));
+dragElement(document.getElementById("draggable"));
 
 function dragElement(elmnt) {
 var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
