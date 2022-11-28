@@ -1,0 +1,22 @@
+{
+  "name": "trellogame",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Darion-Quarles/TrelloGame.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Darion-Quarles/TrelloGame/issues"
+  },
+  "homepage": "https://github.com/Darion-Quarles/TrelloGame#readme",
+  "dependencies": {
+    "firebase": "^9.13.0"
+  }
+}
