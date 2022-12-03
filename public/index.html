@@ -1,5 +1,6 @@
 <!DOCTYPE html5>
 <html>
+
 <head>
 <title>Login</title>
 <link rel="stylesheet" href="./grid.css" />
@@ -11,42 +12,52 @@
  
         <button  id="Create">Create</button>
 
-        <script type="module">
-            // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
-  import { getFirestore, doc, getDoc, getDocs, collection, setDoc } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
-            // Your web app's Firebase configuration
-            const firebaseConfig = {
-              apiKey: "AIzaSyA3vcv9QdweYm---aIU-wuPh9aTtWhEuqY",
-              authDomain: "chrono-38aff.firebaseapp.com",
-              databaseURL: "https://chrono-38aff-default-rtdb.firebaseio.com",
-              projectId: "chrono-38aff",
-              storageBucket: "chrono-38aff.appspot.com",
-              messagingSenderId: "168683237162",
-              appId: "1:168683237162:web:861aadb1c8e3f0e3f7f853"
-            };
-          
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const db=getFirestore(app)
-            var create=document.getElementById("Create")
-            var Login=document.getElementById("Login")
-            create.addEventListener('click',(e)=>{
-                console.log("TRYING")
-            var name=document.getElementById("UserName").value
-            var pw= document.getElementById("Password").value
-             setDoc(doc(db,"Users",name),{
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="./grid.css" />
+</head>
+
+<body id="container">
+    <input type="password" placeholder="Password" id="Password">
+    <input type="text" placeholder="UserName" id="UserName">
+    <button id="Login">Login</button>
+    <button id="Create">Create</button>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+        import { getFirestore, doc, getDoc, getDocs, collection, setDoc } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyA3vcv9QdweYm---aIU-wuPh9aTtWhEuqY",
+            authDomain: "chrono-38aff.firebaseapp.com",
+            databaseURL: "https://chrono-38aff-default-rtdb.firebaseio.com",
+            projectId: "chrono-38aff",
+            storageBucket: "chrono-38aff.appspot.com",
+            messagingSenderId: "168683237162",
+            appId: "1:168683237162:web:861aadb1c8e3f0e3f7f853"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app)
+        var create = document.getElementById("Create")
+        var Login = document.getElementById("Login")
+        create.addEventListener('click', (e) => {
+            console.log("TRYING")
+            var name = document.getElementById("UserName").value
+            var pw = document.getElementById("Password").value
+            setDoc(doc(db, "Users", name), {
                 username: name,
                 password: pw
-            }).then(()=>{
+            }).then(() => {
                 alert("User Added")
-            }).catch((error)=>{
+            }).catch((error) => {
                 alert(error)
             })
-            })
-            
-            Login.addEventListener('click',(e)=>{
-                var name=document.getElementById("UserName").value
+        })
+
 
                 var ref= doc(db,"Users",name)
                 const docSnap= getDoc(ref).then(docSnap=>{
@@ -54,13 +65,25 @@
             var pw= document.getElementById("Password").value
                     if(docSnap.data().password==pw){console.log("Logged in") 
                 window.location.href=`/chrono.html?name=${name}`}
+
+        Login.addEventListener('click', (e) => {
+            var name = document.getElementById("UserName").value
+
+            var ref = doc(db, "Users", name)
+            const docSnap = getDoc(ref).then(docSnap => {
+                if (docSnap.exists()) {
+                    var pw = document.getElementById("Password").value
+                    if (docSnap.data().password == pw) { console.log("Logged in") }
                     else console.log("wrong username or password")
                 }
                 else console.log("wrong  password or username")
 
             })})
+        }})
          
           </script>
+
+
 </body>
 
 </html>
