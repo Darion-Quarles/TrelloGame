@@ -8,6 +8,7 @@
     <input type="password" placeholder= "Password"id="Password">
     <input type="text" placeholder="UserName" id="UserName">
     <button  id="Login">Login</button>
+ 
         <button  id="Create">Create</button>
 
         <script type="module">
@@ -51,12 +52,14 @@
                 const docSnap= getDoc(ref).then(docSnap=>{
                 if(docSnap.exists()){
             var pw= document.getElementById("Password").value
-                    if(docSnap.data().password==pw){console.log("Logged in")}
+                    if(docSnap.data().password==pw){console.log("Logged in") 
+                window.location.href=`/chrono.html?name=${name}`}
                     else console.log("wrong username or password")
                 }
                 else console.log("wrong  password or username")
 
             })})
+         
           </script>
 </body>
 
