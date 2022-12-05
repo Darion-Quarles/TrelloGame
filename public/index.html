@@ -5,20 +5,10 @@
 <title>Login</title>
 <link rel="stylesheet" href="./grid.css" />
 </head>
-<body id="container">
-    <input type="password" placeholder= "Password"id="Password">
-    <input type="text" placeholder="UserName" id="UserName">
-    <button  id="Login">Login</button>
- 
-        <button  id="Create">Create</button>
-
-
-<head>
-    <title>Login</title>
-    <link rel="stylesheet" href="./grid.css" />
-</head>
 
 <body id="container">
+    
+    <a href="./draggableIndex.html">drag</a>
     <input type="password" placeholder="Password" id="Password">
     <input type="text" placeholder="UserName" id="UserName">
     <button id="Login">Login</button>
@@ -59,13 +49,6 @@
         })
 
 
-                var ref= doc(db,"Users",name)
-                const docSnap= getDoc(ref).then(docSnap=>{
-                if(docSnap.exists()){
-            var pw= document.getElementById("Password").value
-                    if(docSnap.data().password==pw){console.log("Logged in") 
-                window.location.href=`/chrono.html?name=${name}`}
-
         Login.addEventListener('click', (e) => {
             var name = document.getElementById("UserName").value
 
@@ -73,15 +56,14 @@
             const docSnap = getDoc(ref).then(docSnap => {
                 if (docSnap.exists()) {
                     var pw = document.getElementById("Password").value
-                    if (docSnap.data().password == pw) { console.log("Logged in") }
+                    if (docSnap.data().password == pw) { console.log("Logged in");
+                    window.location.href=`/dragableIndex.html?name=${name}` }
                     else console.log("wrong username or password")
                 }
                 else console.log("wrong  password or username")
 
             })})
-        }})
-         
-          </script>
+    </script>
 
 
 </body>

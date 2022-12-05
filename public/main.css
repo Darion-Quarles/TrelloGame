@@ -25,6 +25,7 @@ button {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
+    width: 100%;
 }
 
 .container {
@@ -32,6 +33,7 @@ button {
     padding: 20px 10px;
     background-color: gold;
     border-radius: 5px;
+    width: 100%;
 }
 
 textarea {
@@ -43,6 +45,7 @@ textarea {
     padding: 10px;
     outline: none;
     box-shadow: 4px 3px 8px 1px inset;
+    width: 100%;
 }
 
 #first {
