@@ -2,8 +2,8 @@
 <html>
 
 <head>
-<title>Login</title>
-<link rel="stylesheet" href="./grid.css" />
+    <title>Login</title>
+    <link rel="stylesheet" href="./grid.css" />
 </head>
 
 <body id="container">
@@ -28,26 +28,12 @@
             messagingSenderId: "168683237162",
             appId: "1:168683237162:web:861aadb1c8e3f0e3f7f853"
         };
-
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app)
         var create = document.getElementById("Create")
         var Login = document.getElementById("Login")
-        create.addEventListener('click', (e) => {
-            console.log("TRYING")
-            var name = document.getElementById("UserName").value
-            var pw = document.getElementById("Password").value
-            setDoc(doc(db, "Users", name), {
-                username: name,
-                password: pw
-            }).then(() => {
-                alert("User Added")
-            }).catch((error) => {
-                alert(error)
-            })
-        })
-
+        
 
         Login.addEventListener('click', (e) => {
             var name = document.getElementById("UserName").value
@@ -56,14 +42,31 @@
             const docSnap = getDoc(ref).then(docSnap => {
                 if (docSnap.exists()) {
                     var pw = document.getElementById("Password").value
-                    if (docSnap.data().password == pw) { console.log("Logged in");
-                    window.location.href=`/dragableIndex.html?name=${name}` }
+
+                    if (docSnap.data().password == pw) { console.log("Logged in"); window.location.href=`/chrono.html?name=${name}` }
                     else console.log("wrong username or password")
                 }
                 else console.log("wrong  password or username")
 
             })})
     </script>
+=======
+            create.addEventListener('click', (e) => {
+            console.log("TRYING")
+          var name = document.getElementById("UserName").value
+            var pw = document.getElementById("Password").value
+            setDoc(doc(db, "Users",name), {
+                username: name,
+                password: pw
+            }).then(() => {
+                alert("User Added")
+            }).catch((error) => {
+                alert(error)
+            })
+        })
+        
+         
+          </script>
 
 
 </body>
